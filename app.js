@@ -2,6 +2,8 @@ const express = require("express")
 const cors = require("cors");
 const app = express();
 
+
+
 const http = require("http");
 
 const server = http.createServer(app);
@@ -15,6 +17,9 @@ app.use(cors({
     allowedHeaders: 'Authorization,content-type,accept',
 }));
 
-server.listen(4000, () => {
-    console.log("the server is run...")
-})
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+
